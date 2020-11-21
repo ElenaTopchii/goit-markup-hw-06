@@ -100,17 +100,6 @@ address {
   font-style: normal;
 }
 
-.visually-hidden {
-  position: absolute !important;
-  clip: rect(1px 1px 1px 1px);
-  clip: rect(1px, 1px, 1px, 1px);
-  padding: 0 !important;
-  border: 0 !important;
-  height: 1px !important;
-  width: 1px !important;
-  overflow: hidden;
-}
-
 .container {
   width: 1200px;
   padding-left: 15px;
@@ -158,14 +147,13 @@ address {
 
 .backdrop {
   position: fixed;
-  z-index: 100;
   top: 0;
-  right: 0;
-  bottom: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 100%;
+  z-index: 70;
+  background-color: rgba(0, 0, 0, 0.2);
   opacity: 1;
-  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-hidden {
@@ -174,182 +162,35 @@ address {
   pointer-events: none;
 }
 
-.modal-box {
-  /* position: absolute; */
-  position: relative;
+.modal {
+  position: absolute;
   top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 50;
   width: 528px;
   height: 581px;
-  padding: 40px;
-  transform: translate(-50%, -50%) scale(1, 1);
-  z-index: 50;
   background-color: var(--white);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-/* .modal-form {
-  padding-left: 40px;
-  padding-right: 40px;
-}
-
-.modal-input-group {
-  margin-bottom: 20px;
-} */
 
 .btn-close {
   display: flex;
   position: absolute;
   top: 8px;
   right: 8px;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  background: transparent;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: var(--white);
+  border: 1px solid var(--black);
   border-radius: 50%;
   padding: 0;
   align-items: center;
 }
 
 .modal-icon-svg {
-  width: 18px;
-  height: 18px;
-  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  width: 30px;
+  height: 30px;
 }
-
-.btn-close:hover .modal-icon-svg,
-.btn-close:focus .modal-icon-svg {
-  fill: var(--accent-cl);
-}
-
-.modal-title {
-  margin-top: 0;
-  margin-bottom: 12px;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 1.15;
-  text-align: center;
-  letter-spacing: 0.03em;
-
-  color: var(--black);
-}
-
-.modal-input-group {
-  position: relative;
-  margin-bottom: 10px;
-}
-
-.modal-label {
-  display: block;
-  color: var(--main-text-cl);
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.15;
-  letter-spacing: 0.01em;
-}
-
-.modal-input,
-.modal-textarea {
-  width: 100%;
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  border-radius: 4px;
-  color: rgba(117, 117, 117, 0.5);
-  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.modal-input {
-  height: 40px;
-  padding-left: 42px;
-}
-
-.modal-textarea {
-  min-width: 100%;
-  max-width: 100%;
-  min-height: 120px;
-  padding: 12px 16px;
-  color: rgba(117, 117, 117, 0.5);
-  font-size: 14px;
-  font-weight: 400;
-  letter-spacing: 0.01em;
-}
-
-.modal-textarea::placeholder {
-  color: rgba(117, 117, 117, 0.5);
-  font-size: 14px;
-  font-weight: 400;
-  letter-spacing: 0.01em;
-}
-
-/* .modal-input-ico {
-  position: absolute;
-  top: 25px;
-  left: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 18px;
-  height: 18px;
-} */
-.input-icon-svg {
-  position: absolute;
-  top: 25px;
-  left: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 18px;
-  height: 18px;
-  padding-top: 11px;
-  padding-bottom: 11px;
-  padding-left: 12px;
-  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.modal-input:hover,
-.modal-input:focus,
-.modal-textarea:hover,
-.modal-textarea:focus {
-  outline: var(--accent-cl) auto 1px;
-  border: 1px solid var(--accent-cl);
-}
-
-.modal-input:hover ~ .input-icon-svg,
-.modal-input:focus ~ .input-icon-svg,
-.modal-textarea:hover ~ .input-icon-svg,
-.modal-textarea:focus ~ .input-icon-svg {
-  fill: var(--accent-cl);
-}
-
-.modal-agree {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin-bottom: 30px;
-  color: var(--main-text-cl);
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.71;
-  letter-spacing: 0.03em;
-}
-
-.contract {
-  color: var(--accent-cl);
-  text-decoration: underline;
-}
-
-.contract input[type="checkbox"] {
-  opacity: 0;
-}
-
-.agree-label {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .menu {
   display: flex;
   margin-left: 93px;

@@ -41,13 +41,22 @@
                 <h1 class="title page-title">Эффективные решения для вашего бизнеса</h1>
                 <button class="btn" data-modal-open>Заказать услугу</button>
 
+                <div class="backdrop is-hidden" data-modal>
+                    <div class="modal">
 
+                        <button class="btn-close" data-modal-close>
+                            <svg class="modal-icon-svg">
+                                <use href="./icons/sprite.svg#icon-close-black-18dp"></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section>
             <div class="container">
-                <h2 class="visually-hidden">Особенности</h2>
+                <h2 hidden>Особенности</h2>
                 <ul class="list special-list">
                     <li class="special-item">
                         <a class="special-icons-link" href="" target="_blank" rel="noopener noreferer">
@@ -390,62 +399,6 @@
             <div class="footer-widget"></div>
         </div>
     </footer>
-    <div class="backdrop is-hidden" data-modal>
-        <div class="modal-box">
-
-            <button class="btn-close" data-modal-close>
-                <svg class="modal-icon-svg">
-                    <use href="./icons/sprite.svg#icon-close-black-18dp"></use>
-                </svg>
-            </button>
-
-            <h3 class="modal-title">Оставьте свои данные, мы вам перезвоним</h3>
-            <form class="modal-form" id="modal-form">
-                <div class="modal-input-group">
-                    <label class="modal-label" for="input-name">Имя</label>
-                    <input class="modal-input" id="input-name" name="name" type="text">
-
-                    <svg class="input-icon-svg" width="12" height="12">
-                        <use href="./icons/sprite.svg#icon-user"></use>
-                    </svg>
-
-                </div>
-                <div class="modal-input-group">
-                    <label class="modal-label" for="input-phone">Телефон</label>
-                    <input class="modal-input" id="input-phone" name="phone" type="text">
-
-                    <svg class="input-icon-svg" width="13" height="13">
-                        <use href="./icons/sprite.svg#icon-phone"></use>
-                    </svg>
-
-                </div>
-                <div class="modal-input-group">
-                    <label class="modal-label" for="input-mail">Почта</label>
-                    <input class="modal-input" id="input-mail" name="mail" type="text">
-
-                    <svg class="input-icon-svg" width="15" height="12">
-                        <use href="./icons/sprite.svg#icon-email"></use>
-                    </svg>
-
-                </div>
-                <div class="modal-input-group">
-                    <label class="modal-label" for="input-comment">Комментарий</label>
-                    <textarea class="modal-textarea" id="input-comment" name="comment"
-                        placeholder="Введите текст"></textarea>
-                </div>
-
-                <div class="modal-agree">
-                    <input id="input-agree" name="agree" type="checkbox">
-                    <label class="agree-label" for="input-agree">Соглашаюсь с рассылкой и принимаю <a class="contract"
-                            href="">Условия
-                            договора</a></label>
-
-                </div>
-                <button class="modal-btn-send">Отправить</button>
-            </form>
-        </div>
-
-    </div>
     <script src="./js/modal.js"></script>
 </body>
 
